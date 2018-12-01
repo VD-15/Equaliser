@@ -19,6 +19,12 @@ namespace Equaliser.Engine
 			repeats = _repeats;
 		}
 
+		public void Reset()
+		{
+			currentFrame = 0;
+			time = 0f;
+		}
+
 		public void Tick(float _time)
 		{
 			time += _time;

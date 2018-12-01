@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Equaliser.Engine
 {
-	public struct DrawArgs
+	struct DrawArgs
 	{
 		public SpriteBatch SB { get; }
 

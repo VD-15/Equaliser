@@ -28,11 +28,27 @@ namespace Equaliser.Engine
 	interface IVisible<T>
 	{
 		void Draw(DrawArgs e);
+		Sprite GetSprite();
 	}
 
 	interface IAnimatable<T>
 	{
+		void Animate(AnimateArgs e);
+		Animator GetAnimator();
+	}
 
+	static class InterfaceMethods
+	{
+		public static Rectangle GetCenteredRectangle(this IPhysical<GameObject> updatable, Vector2 size)
+		{
+			Transform t = updatable.GetTransform();
+			return new Rectangle(
+				(int)(t.translation.X - (size.X * t.scale.X)), 
+				(int)(t.translation.Y - (size.Y * t.scale.Y)), 
+				(int)(size.X * t.scale.Y), 
+				(int)(size.Y * t.scale.Y)
+			);
+		}
 	}
 
 	//GameObjects will inherit certain behavior based on the interfaces defined above.
