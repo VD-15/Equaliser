@@ -69,7 +69,7 @@ namespace Equaliser
 
         public void Draw(DrawArgs e)
         {
-			e.SB.Draw(sprite.GetTexture(), (this as IPhysical<GameObject>).GetCenteredRectangle(new Vector2(32f, 32f)), sprite.crop, sprite.color);
+			e.SB.Draw(sprite.GetTexture(), Util.GetCenteredRectangle(Util.WorldToScreen(transform.translation, e.device), new Vector2(32f)), sprite.crop, sprite.color);
         }
 
 		public Sprite GetSprite()

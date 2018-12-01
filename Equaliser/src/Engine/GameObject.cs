@@ -30,16 +30,7 @@ namespace Equaliser.Engine
 
 	static class InterfaceMethods
 	{
-		public static Rectangle GetCenteredRectangle(this IPhysical<GameObject> updatable, Vector2 size)
-		{
-			Transform t = updatable.GetTransform();
-			return new Rectangle(
-				(int)(t.translation.X - (size.X * t.scale.X * 0.5f)), 
-				(int)(t.translation.Y - (size.Y * t.scale.Y * 0.5f)), 
-				(int)(size.X * t.scale.Y), 
-				(int)(size.Y * t.scale.Y)
-			);
-		}
+		//IDK
 	}
 
 	//GameObjects will inherit certain behavior based on the interfaces defined above.
@@ -69,6 +60,8 @@ namespace Equaliser.Engine
 
 		public static void OnPostupdate()
 		{
+			//TODO: COLLISIONS GO HERE, ANDY ;)
+
 			foreach (GameObject g in TO_REMOVE)
 			{
 				GAMEOBJECTS.Remove(g);
