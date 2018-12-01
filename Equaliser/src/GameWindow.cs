@@ -36,7 +36,7 @@ namespace Equaliser
 
         protected override void Initialize()
         {
-			GameObject.Instantiate(new Player(new Vector2(64f, 64f)));
+			GameObject.Instantiate(new Player(new Vector2(0f, 0f)));
 
 			//Initialise the game in here as oppose to the constructor.
             base.Initialize();
@@ -78,7 +78,7 @@ namespace Equaliser
 
 			spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp);
 
-			GameObject.OnDraw(new DrawArgs(spriteBatch));
+			GameObject.OnDraw(new DrawArgs(spriteBatch, GraphicsDevice));
 
 			spriteBatch.End();
 

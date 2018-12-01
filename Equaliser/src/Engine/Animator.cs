@@ -17,9 +17,8 @@ namespace Equaliser.Engine
 		{
 			currentAnimation = a;
 
-			Animation anim = null;
 
-			if (animations.TryGetValue(a, out anim))
+			if (animations.TryGetValue(a, out Animation anim))
 			{
 				anim.Reset();
 			}

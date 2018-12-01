@@ -54,6 +54,7 @@
     <Compile Include="src\Engine\Sprite.cs" />
     <Compile Include="src\Engine\Transform.cs" />
     <Compile Include="src\Engine\UpdateArgs.cs" />
+    <Compile Include="src\Engine\Util.cs" />
     <Compile Include="src\GameWindow.cs" />
     <Compile Include="src\Player.cs" />
     <Compile Include="src\Program.cs" />
