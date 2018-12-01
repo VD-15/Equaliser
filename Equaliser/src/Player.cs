@@ -97,5 +97,15 @@ namespace Equaliser
         {
 
         }
-    }
+
+		public void Animate(AnimateArgs e)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public Animator GetAnimator()
+		{
+			throw new System.NotImplementedException();
+		}
+	}
 }

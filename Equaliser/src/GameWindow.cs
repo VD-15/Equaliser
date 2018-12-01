@@ -1,21 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 using Equaliser.Engine;
 
 namespace Equaliser
 {
     class GameWindow : Game
-    {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+	{
+		public static Dictionary<string, Texture2D> LOADED_SPRITES = new Dictionary<string, Texture2D>();
+
+		private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
 		//Keyboard state and previous state, use these to detect input
-		KeyboardState KS, PKS;
+		private KeyboardState KS, PKS;
 
 		//Mouse state and previous mouse state
-		MouseState MS, PMS;
+		private MouseState MS, PMS;
         
         public GameWindow()
         {
@@ -77,5 +80,10 @@ namespace Equaliser
 
             base.Draw(gameTime);
         }
+
+		public void LoadSprite(string path)
+		{
+			LOADED_SPRITES.Add(path, Content.Load<Texture2D>(path));
+		}
     }
 }
