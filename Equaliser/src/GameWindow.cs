@@ -9,7 +9,6 @@ namespace Equaliser
 {
     class GameWindow : Game
 	{
-		public static Dictionary<string, Texture2D> LOADED_SPRITES = new Dictionary<string, Texture2D>();
 
 		private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -37,7 +36,7 @@ namespace Equaliser
 
         protected override void Initialize()
         {
-			GameObject.Instantiate(new Player(Vector2.Zero));
+			GameObject.Instantiate(new Player(new Vector2(64f, 64f)));
 
 			//Initialise the game in here as oppose to the constructor.
             base.Initialize();
@@ -47,7 +46,7 @@ namespace Equaliser
         {
 			//Load any content in here
             spriteBatch = new SpriteBatch(GraphicsDevice);
-			LoadSprite(@"player0.png");
+			LoadSprite(@"player0");
         }
 		
         protected override void UnloadContent()
@@ -61,10 +60,12 @@ namespace Equaliser
 			MS = Mouse.GetState();
 			// Write Updating code below here.
 
-            base.Update(gameTime);
+			if (KS.IsKeyDown(Keys.Escape)) Exit();
 
 			GameObject.OnUpdate(new UpdateArgs(KS, PKS, MS, PMS, gameTime.ElapsedGameTime.Milliseconds / 1000f));
 			GameObject.OnPostupdate();
+
+			base.Update(gameTime);
 
 			//Don't write anything below here.
 			PKS = KS;
@@ -82,11 +83,11 @@ namespace Equaliser
 			spriteBatch.End();
 
             base.Draw(gameTime);
-        }
+		}
 
 		public void LoadSprite(string path)
 		{
-			LOADED_SPRITES.Add(@"Texture2D\" + path, Content.Load<Texture2D>(path));
+			Sprite.LOADED_TEXTURES.Add(path, Content.Load<Texture2D>(@"Texture2D\" + path));
 		}
-    }
+	}
 }

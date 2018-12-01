@@ -43,8 +43,8 @@ namespace Equaliser.Engine
 		{
 			Transform t = updatable.GetTransform();
 			return new Rectangle(
-				(int)(t.translation.X - (size.X * t.scale.X)), 
-				(int)(t.translation.Y - (size.Y * t.scale.Y)), 
+				(int)(t.translation.X - (size.X * t.scale.X * 0.5f)), 
+				(int)(t.translation.Y - (size.Y * t.scale.Y * 0.5f)), 
 				(int)(size.X * t.scale.Y), 
 				(int)(size.Y * t.scale.Y)
 			);
