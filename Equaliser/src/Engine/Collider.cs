@@ -17,13 +17,5 @@ namespace Equaliser.Engine
 				&& System.Math.Abs(this.transform.translation.Y - collider.transform.translation.Y) < (this.size.Y / 2) + (collider.size.Y / 2));
 		}
 
-		public bool Intersects(Collider[] colliders)
-		{
-			foreach(Collider c in colliders)
-				if(Intersects(c))
-					return true;
-			return false;
-		}
-
 	}
 }

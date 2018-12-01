@@ -78,6 +78,25 @@ namespace Equaliser.Engine
 
 		public static void OnPostupdate()
 		{
+			List<ICollidable<GameObject>> foo = new List<ICollidable<GameObject>>();
+			
+			foreach (GameObject g in GAMEOBJECTS)
+			{
+				if (g.GetType() == typeof(ICollidable<GameObject>))
+				{
+					foo.Add(g as ICollidable<GameObject>);
+				}
+			}
+			
+			for(int i = 0; i < foo.Count; i++) {
+				Collider colliderI = foo[i].GetCollider();
+				for(int j = i + 1; j < foo.Count; j++) {
+					bool boo = colliderI.Intersects(foo[j].GetCollider());
+				}
+
+			}
+
+
 			foreach (GameObject g in TO_REMOVE)
 			{
 				GAMEOBJECTS.Remove(g);
