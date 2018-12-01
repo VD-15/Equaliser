@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using Equaliser.Engine;
+
 namespace Equaliser
 {
     public class GameWindow : Game
@@ -55,6 +57,9 @@ namespace Equaliser
 
             base.Update(gameTime);
 
+			GameObject.OnUpdate(new UpdateArgs(KS, PKS, MS, PMS, gameTime.ElapsedGameTime.Milliseconds / 1000f));
+			GameObject.OnPostupdate();
+
 			//Don't write anything below here.
 			PKS = KS;
 			PMS = MS;
@@ -62,7 +67,14 @@ namespace Equaliser
 		
         protected override void Draw(GameTime gameTime)
         {
-            this.GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.Black);
+
+			spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp);
+
+			GameObject.OnDraw(new DrawArgs(spriteBatch));
+
+			spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }
