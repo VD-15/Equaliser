@@ -19,6 +19,7 @@ namespace Equaliser.Engine
 	interface IVisible<T>
 	{
 		void Draw(DrawArgs e);
+		Sprite GetSprite();
 	}
 
 	interface IAnimatable<T>

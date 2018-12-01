@@ -37,6 +37,8 @@ namespace Equaliser
 
         protected override void Initialize()
         {
+			GameObject.Instantiate(new Player(Vector2.Zero));
+
 			//Initialise the game in here as oppose to the constructor.
             base.Initialize();
         }
