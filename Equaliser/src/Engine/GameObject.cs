@@ -23,7 +23,8 @@ namespace Equaliser.Engine
 
 	interface IAnimatable<T>
 	{
-
+		void Animate(AnimateArgs e);
+		Animator GetAnimator();
 	}
 
 	//GameObjects will inherit certain behavior based on the interfaces defined above.

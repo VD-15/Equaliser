@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Equaliser
 {
-	class Settings
+	public class Settings
 	{
 		public static readonly Keys MOVE_UP = Keys.W;
 		public static readonly Keys MOVE_DOWN = Keys.S;

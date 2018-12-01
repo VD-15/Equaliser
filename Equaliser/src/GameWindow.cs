@@ -6,7 +6,7 @@ using Equaliser.Engine;
 
 namespace Equaliser
 {
-    public class GameWindow : Game
+    class GameWindow : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
