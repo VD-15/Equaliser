@@ -44,11 +44,13 @@ namespace Equaliser
             {
 				transform.translation.Y += 100f * e.gameTime;
             }
-
             if (e.KS.IsKeyDown(Settings.ATTACK))
             {
 				Attack();
             }
+
+            move(translation);
+
 
         }
 
