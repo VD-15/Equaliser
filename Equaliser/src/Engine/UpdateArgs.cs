@@ -18,7 +18,7 @@ namespace Equaliser.Engine
 			PKS = _PKS;
 			MS = _MS;
 			PMS = _MS;
-			gameTime = _gameTime
+			gameTime = _gameTime;
 		}
 	}
 }
