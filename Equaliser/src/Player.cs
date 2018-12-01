@@ -10,8 +10,8 @@ namespace Equaliser
         private Transform transform;
         private readonly Rectangle bounds = new Rectangle(-960, -540, 960, 540);
 		private Sprite sprite;
-		
-        public int health
+
+		public int health
         {
             get { return health; }
             set { health = value; }
@@ -19,55 +19,42 @@ namespace Equaliser
 		
         public Player(Vector2 position)
         {
-            transform.translation = position;
-			
-			sprite = new Sprite(GameWindow.LOADED_SPRITES[@"player0.png"], new Rectangle(0, 0, 32, 32), Color.White);
+			transform = new Transform(position, Vector2.One, 0f);
+			sprite = new Sprite("player0", new Rectangle(0, 0, 32, 32), Color.White);
         }
 
         public void Update(UpdateArgs e)
         {
-            Vector2 translation = new Vector2();
+
 
             if (e.KS.IsKeyDown(Settings.MOVE_RIGHT)) //right
             {
-                translation.X += 1 * e.gameTime;
+                transform.translation.X += 100f * e.gameTime;
             }
             else if (e.KS.IsKeyDown(Settings.MOVE_LEFT)) //left
             {
-                translation.X -= 1 * e.gameTime;
+				transform.translation.X -= 100f * e.gameTime;
             }
 
             if (e.KS.IsKeyDown(Settings.MOVE_UP)) //up
             {
-                translation.Y += 1 * e.gameTime;
+				transform.translation.Y -= 100f * e.gameTime;
             }
             else if (e.KS.IsKeyDown(Settings.MOVE_DOWN)) //down
             {
-                translation.Y -= 1 * e.gameTime;
+				transform.translation.Y += 100f * e.gameTime;
             }
+
             if (e.KS.IsKeyDown(Settings.ATTACK))
             {
 				Attack();
             }
-
-            move(translation);
-
 
         }
 
         private void Attack()
         {
             
-        }
-
-        private void move(Vector2 translation)
-        {
-            Vector2 nextPosition = translation;
-
-            if (bounds.Contains(nextPosition))
-            {
-                transform.translation = nextPosition;
-            }
         }
         
 
@@ -82,7 +69,7 @@ namespace Equaliser
 
         public void Draw(DrawArgs e)
         {
-			e.SB.Draw(sprite.texture, sprite.crop, (this as IPhysical<GameObject>).GetCenteredRectangle(new Vector2(16f, 16f)), sprite.color);
+			e.SB.Draw(sprite.GetTexture(), (this as IPhysical<GameObject>).GetCenteredRectangle(new Vector2(32f, 32f)), sprite.crop, sprite.color);
         }
 
 		public Sprite GetSprite()
