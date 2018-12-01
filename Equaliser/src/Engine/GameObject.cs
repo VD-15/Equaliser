@@ -5,6 +5,15 @@ using System.Collections.Generic;
 
 namespace Equaliser.Engine
 {
+
+	interface ICollidable<T>
+	{
+		Collider GetCollider();
+
+		void OnCollide(ICollidable<GameObject> other);
+		
+	}
+
 	interface IUpdatable<T>
 	{
 		void Update(UpdateArgs e);

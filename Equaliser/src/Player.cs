@@ -25,8 +25,6 @@ namespace Equaliser
 
         public void Update(UpdateArgs e)
         {
-
-
             if (e.KS.IsKeyDown(Settings.MOVE_RIGHT)) //right
             {
                 transform.translation.X += 100f * e.gameTime;
@@ -44,12 +42,10 @@ namespace Equaliser
             {
 				transform.translation.Y += 100f * e.gameTime;
             }
-
             if (e.KS.IsKeyDown(Settings.ATTACK))
             {
 				Attack();
             }
-
         }
 
         private void Attack()
