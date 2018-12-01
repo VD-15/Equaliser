@@ -7,9 +7,8 @@ namespace Equaliser.Engine
 {
 	interface IUpdatable<T>
 	{
-		void preUpdate();
 		void Update(UpdateArgs e);
-		void postUpdate();
+		void PostUpdate();
 	}
 
 	interface IPhysical<T>
@@ -17,9 +16,9 @@ namespace Equaliser.Engine
 		Transform GetTransform();
 	}
 
-	interface IDrawable<T>
+	interface IVisible<T>
 	{
-
+		void Draw(DrawArgs e);
 	}
 
 	interface IAnimatable<T>
@@ -34,29 +33,52 @@ namespace Equaliser.Engine
 		private static List<GameObject> TO_ADD = new List<GameObject>();
 		private static List<GameObject> TO_REMOVE = new List<GameObject>();
 
-		static void Instantiate(GameObject g)
+		public static void Instantiate(GameObject g)
 		{
 			TO_ADD.Add(g);
 		}
 
-		static void Delete(GameObject g)
+		public static void Delete(GameObject g)
 		{
 			TO_REMOVE.Add(g);
 		}
 
-		static void OnPreUpdate()
+		public static void OnUpdate(UpdateArgs e)
 		{
-
+			foreach (IUpdatable<GameObject> u in GAMEOBJECTS)
+			{
+				u.Update(e);
+			}
 		}
 
-		static void OnUpdate(UpdateArgs e)
+		public static void OnPostupdate()
 		{
+			foreach (GameObject g in TO_REMOVE)
+			{
+				GAMEOBJECTS.Remove(g);
+			}
 
+			TO_REMOVE.Clear();
+
+			foreach (GameObject g in TO_ADD)
+			{
+				GAMEOBJECTS.Add(g);
+			}
+
+			TO_ADD.Clear();
+
+			foreach (IUpdatable<GameObject> g in GAMEOBJECTS)
+			{
+				g.PostUpdate();
+			}
 		}
 
-		static void OnPostupdate()
+		public static void OnDraw(DrawArgs e)
 		{
-
+			foreach (IVisible<GameObject> d in GAMEOBJECTS)
+			{
+				d.Draw(e);
+			}
 		}
 	}
 }

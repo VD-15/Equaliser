@@ -8,7 +8,7 @@ namespace Equaliser.Engine
 	{
 		public Rectangle[] frames { get; }
 		public float interval { get; }
-		private int currentFrame { get; }
+		public int currentFrame { get; private set; }
 		private float time;
 		private bool repeats;
 
@@ -22,6 +22,28 @@ namespace Equaliser.Engine
 		public void Tick(float _time)
 		{
 			time += _time;
+
+			int change = 0;
+
+			while (time > interval)
+			{
+				change++;
+				time -= interval;
+			}
+
+			currentFrame += change;
+
+			if (currentFrame > frames.Length)
+			{
+				if (repeats)
+				{
+					currentFrame %= frames.Length;
+				}
+				else
+				{
+					currentFrame = frames.Length - 1;
+				}
+			}
 		}
 	}
 }
