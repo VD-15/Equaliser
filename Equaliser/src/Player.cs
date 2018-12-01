@@ -20,7 +20,8 @@ namespace Equaliser
         public Player(Vector2 position)
         {
             transform.translation = position;
-			sprite = new Sprite(GameWindow.LOADED_SPRITES[@"Texture2D\player0.png"], new Rectangle(0, 0, 32, 32), Color.White);
+			
+			sprite = new Sprite(GameWindow.LOADED_SPRITES[@"player0.png"], new Rectangle(0, 0, 32, 32), Color.White);
         }
 
         public void Update(UpdateArgs e)
@@ -81,10 +82,10 @@ namespace Equaliser
 
         public void Draw(DrawArgs e)
         {
-			e.SB.Draw(sprite.texture, sprite.crop, new Rectangle(new Point()), sprite.color)
+			e.SB.Draw(sprite.texture, sprite.crop, (this as IPhysical<GameObject>).GetCenteredRectangle(new Vector2(16f, 16f)), sprite.color);
         }
 
-		public void GetSprite()
+		public Sprite GetSprite()
 		{
 			return sprite;
 		}

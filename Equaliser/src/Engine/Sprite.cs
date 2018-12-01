@@ -6,7 +6,6 @@ namespace Equaliser.Engine
 {
 	class Sprite
 	{
-
 		public Texture2D texture;
 		public Rectangle crop;
 		public Color color;

@@ -47,6 +47,7 @@ namespace Equaliser
         {
 			//Load any content in here
             spriteBatch = new SpriteBatch(GraphicsDevice);
+			LoadSprite(@"player0.png");
         }
 		
         protected override void UnloadContent()
@@ -85,7 +86,7 @@ namespace Equaliser
 
 		public void LoadSprite(string path)
 		{
-			LOADED_SPRITES.Add(path, Content.Load<Texture2D>(path));
+			LOADED_SPRITES.Add(@"Texture2D\" + path, Content.Load<Texture2D>(path));
 		}
     }
 }
