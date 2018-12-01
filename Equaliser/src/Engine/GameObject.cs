@@ -13,7 +13,7 @@ namespace Equaliser.Engine
 
 	interface IPhysical<T>
 	{
-		Transform getTransform();
+		Transform GetTransform();
 	}
 
 	interface IDrawable<T>

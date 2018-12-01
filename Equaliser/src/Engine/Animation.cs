@@ -4,13 +4,6 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Equaliser.Engine
 {
-	enum AnimationState
-	{
-		Stopped,
-		Paused,
-		PlayingF
-	}
-
 	class Animation
 	{
 		public Texture2D spriteSheet { get; }
@@ -20,7 +13,6 @@ namespace Equaliser.Engine
 		private float time;
 		private bool repeats;
 		private Sprite sprite;
-		private AnimationState state;
 
 		public Animation(Texture2D _sheet, Rectangle[] _frames, float _interval, bool _repeats)
 		{
