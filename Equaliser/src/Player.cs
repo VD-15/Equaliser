@@ -36,11 +36,11 @@ namespace Equaliser
 
             if (e.KS.IsKeyDown(Settings.MOVE_UP)) //up
             {
-				transform.translation.Y -= 100f * e.gameTime;
+				transform.translation.Y += 100f * e.gameTime;
             }
             else if (e.KS.IsKeyDown(Settings.MOVE_DOWN)) //down
             {
-				transform.translation.Y += 100f * e.gameTime;
+				transform.translation.Y -= 100f * e.gameTime;
             }
             if (e.KS.IsKeyDown(Settings.ATTACK))
             {
