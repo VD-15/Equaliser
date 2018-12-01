@@ -9,11 +9,14 @@ namespace Equaliser
     class Player : GameObject, IPhysical<Player>, IVisible<Player>, IAnimatable<Player>, IUpdatable<Player>
     {
         private Transform transform;
-        private readonly float speed = 1f;
-        private readonly Rectangle bounds = new Rectangle(0,0,1920,1080);
+        private readonly Rectangle bounds = new Rectangle(-960, -540, 960, 540);
 
 
-        private int health = 10;
+        public int health
+        {
+            get { return health; }
+            set { health = value; }
+        }
 
 
         public Player(Vector2 position)
@@ -23,18 +26,34 @@ namespace Equaliser
 
         public void Update(UpdateArgs e)
         {
-            
+            Vector2 translation = new Vector2();
+
+
+            if (true)
+            { //right
+                translation.X++;
+            }
+            else if (false) //left
+            {
+                translation.X--;
+            }
+
+            if (true) { //up
+                translation.Y++;
+            } else if(false) //down
+            {
+                translation.Y--;
+            }
+
+            move(translation);
+
+
         }
 
-        public int GetHealth()
+        public void Attack()
         {
-            return health;
-        }
-        public void AddHealth()
-        {
-            health++;
-        }
 
+        }
 
         private void move(Vector2 translation)
         {
@@ -42,47 +61,10 @@ namespace Equaliser
 
             if (bounds.Contains(nextPosition))
             {
-                if (nextPosition.X > transform.translation.X) {
-                    //Right
-
-                }
-                else if (nextPosition.X < transform.translation.X)
-                {
-                    //Left
-
-                }
-                else if (nextPosition.Y > transform.translation.Y && (nextPosition.Y - transform.translation.Y) > (nextPosition.X - transform.translation.X))
-                {
-                    //Up
-
-                }
-                else if (nextPosition.Y < transform.translation.Y && (nextPosition.Y - transform.translation.Y) < (nextPosition.X - transform.translation.X))
-                {
-                    //Down
-
-                }
-
-
                 transform.translation = nextPosition;
             }
         }
-
-        private void SetSprite(int index)
-        {
-            switch (index)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                default: break;
-            }
-        }
-
+        
 
         public Transform GetTransform()
         {
