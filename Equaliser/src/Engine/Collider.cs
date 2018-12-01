@@ -12,18 +12,9 @@ namespace Equaliser.Engine
 
 		public bool Intersects(Collider collider)
 		{
-			if (this.transform.translation.X + (this.size.X / 2) >= collider.transform.translation.X - (collider.size.X / 2))
-			{
-				//
-			}
 
-            if (System.Math.Abs(this.transform.translation.X - collider.transform.translation.X) < (this.size.X / 2) + (collider.size.X / 2)
-                && System.Math.Abs(this.transform.translation.Y - collider.transform.translation.Y) < (this.size.Y / 2) + (collider.size.Y / 2))
-            {
-                return true;
-            }
-
-			return false;
+			return (System.Math.Abs(this.transform.translation.X - collider.transform.translation.X) < (this.size.X / 2) + (collider.size.X / 2)
+				&& System.Math.Abs(this.transform.translation.Y - collider.transform.translation.Y) < (this.size.Y / 2) + (collider.size.Y / 2));
 		}
 
 		public bool Intersects(Collider[] colliders)
