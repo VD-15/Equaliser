@@ -51,6 +51,7 @@
     <Compile Include="src\Engine\Transform.cs" />
     <Compile Include="src\Engine\UpdateArgs.cs" />
     <Compile Include="src\GameWindow.cs" />
+    <Compile Include="src\Player.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
