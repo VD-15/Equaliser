@@ -10,6 +10,11 @@ namespace Equaliser.Engine
 		private Vector2 size;
 		private Transform transform;
 
+		public Collider(Transform transform, Vector2 size) {
+			this.transform = transform;
+			this.size = size;
+		}
+
 		public bool Intersects(Collider collider)
 		{
 
