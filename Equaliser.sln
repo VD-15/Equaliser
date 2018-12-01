@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equaliser", "Equaliser\Equaliser.csproj", "{4404B20D-E228-4A38-A0CE-941A5C49F7E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4404B20D-E228-4A38-A0CE-941A5C49F7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4404B20D-E228-4A38-A0CE-941A5C49F7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4404B20D-E228-4A38-A0CE-941A5C49F7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4404B20D-E228-4A38-A0CE-941A5C49F7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {232F8397-62CE-42FE-8453-517D7C224876}
+	EndGlobalSection
+EndGlobal
