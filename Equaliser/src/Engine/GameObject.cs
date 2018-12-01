@@ -9,6 +9,8 @@ namespace Equaliser.Engine
 	interface ICollidable<T>
 	{
 		Collider GetCollider();
+
+		void OnCollide(ICollidable<GameObject> other);
 		
 	}
 
