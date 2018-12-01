@@ -6,7 +6,7 @@ using Equaliser.Engine;
 namespace Equaliser
 {
 
-    class Player : GameObject, IPhysical<Player>, IDrawable<Player>, IAnimatable<Player>, IUpdatable<Player>
+    class Player : GameObject, IPhysical<Player>, IVisible<Player>, IAnimatable<Player>, IUpdatable<Player>
     {
         private Transform transform;
         private readonly float speed = 1f;
@@ -67,7 +67,7 @@ namespace Equaliser
             }
         }
 
-        private void setSprite(int index)
+        private void SetSprite(int index)
         {
             switch (index)
             {
@@ -84,15 +84,18 @@ namespace Equaliser
         }
 
 
-        public Transform getTransform()
+        public Transform GetTransform()
         {
             return transform;
         }
 
-        public void postUpdate()
+        public void PostUpdate()
         {
         }
 
+        public void Draw(DrawArgs e)
+        {
 
+        }
     }
 }
