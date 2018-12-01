@@ -10,19 +10,16 @@ namespace Equaliser.Engine
 		private Vector2 size;
 		private Transform transform;
 
+		public Collider(Transform transform, Vector2 size) {
+			this.transform = transform;
+			this.size = size;
+		}
+
 		public bool Intersects(Collider collider)
 		{
 
 			return (System.Math.Abs(this.transform.translation.X - collider.transform.translation.X) < (this.size.X / 2) + (collider.size.X / 2)
 				&& System.Math.Abs(this.transform.translation.Y - collider.transform.translation.Y) < (this.size.Y / 2) + (collider.size.Y / 2));
-		}
-
-		public bool Intersects(Collider[] colliders)
-		{
-			foreach(Collider c in colliders)
-				if(Intersects(c))
-					return true;
-			return false;
 		}
 
 	}
