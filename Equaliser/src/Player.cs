@@ -46,15 +46,14 @@ namespace Equaliser
             {
                 translation.Y -= 1 * e.gameTime;
             }
-            if (e.KS.IsKeyDown(Settings.ATTACK))
-            {
-				Attack();
-            }
 
             move(translation);
 
-
-        }
+			if (e.KS.IsKeyDown(Settings.ATTACK))
+			{
+				Attack();
+			}
+		}
 
         private void Attack()
         {
@@ -83,7 +82,7 @@ namespace Equaliser
 
         public void Draw(DrawArgs e)
         {
-
+			
         }
     }
 }

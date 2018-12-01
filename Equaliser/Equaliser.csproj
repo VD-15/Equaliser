@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src\Engine\Animation.cs" />
+    <Compile Include="src\Engine\Collider.cs" />
     <Compile Include="src\Engine\DrawArgs.cs" />
     <Compile Include="src\Engine\GameObject.cs" />
     <Compile Include="src\Engine\Sprite.cs" />
