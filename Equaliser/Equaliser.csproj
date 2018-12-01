@@ -45,7 +45,9 @@
     <StartupObject>Equaliser.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\Engine\AnimateArgs.cs" />
     <Compile Include="src\Engine\Animation.cs" />
+    <Compile Include="src\Engine\Animator.cs" />
     <Compile Include="src\Engine\DrawArgs.cs" />
     <Compile Include="src\Engine\GameObject.cs" />
     <Compile Include="src\Engine\Sprite.cs" />
