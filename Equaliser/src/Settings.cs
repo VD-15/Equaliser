@@ -10,5 +10,6 @@ namespace Equaliser
 		public static readonly Keys MOVE_DOWN = Keys.S;
 		public static readonly Keys MOVE_LEFT = Keys.A;
 		public static readonly Keys MOVE_RIGHT = Keys.D;
-	}
+        public static readonly Keys ATTACK = Keys.Space;
+    }
 }

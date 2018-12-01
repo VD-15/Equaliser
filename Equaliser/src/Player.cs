@@ -29,20 +29,26 @@ namespace Equaliser
             Vector2 translation = new Vector2();
 
 
-            if (true)
-            { //right
-                translation.X++;
-            }
-            else if (false) //left
+            if (e.KS.IsKeyDown(Settings.MOVE_RIGHT)) //right
             {
-                translation.X--;
+                translation.X += 1 * e.gameTime;
+            }
+            else if (e.KS.IsKeyDown(Settings.MOVE_LEFT)) //left
+            {
+                translation.X -= 1 * e.gameTime;
             }
 
-            if (true) { //up
-                translation.Y++;
-            } else if(false) //down
+            if (e.KS.IsKeyDown(Settings.MOVE_UP)) //up
             {
-                translation.Y--;
+                translation.Y += 1 * e.gameTime;
+            }
+            else if (e.KS.IsKeyDown(Settings.MOVE_DOWN)) //down
+            {
+                translation.Y -= 1 * e.gameTime;
+            }
+            if (e.KS.IsKeyDown(Settings.ATTACK))
+            {
+				Attack();
             }
 
             move(translation);
@@ -50,9 +56,9 @@ namespace Equaliser
 
         }
 
-        public void Attack()
+        private void Attack()
         {
-
+            
         }
 
         private void move(Vector2 translation)
