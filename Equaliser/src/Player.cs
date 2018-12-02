@@ -27,20 +27,20 @@ namespace Equaliser
         {
             if (e.KS.IsKeyDown(Settings.MOVE_RIGHT)) //right
             {
-                transform.translation.X += 100f * e.gameTime;
+                transform.location.X += 100f * e.gameTime;
             }
             else if (e.KS.IsKeyDown(Settings.MOVE_LEFT)) //left
             {
-				transform.translation.X -= 100f * e.gameTime;
+				transform.location.X -= 100f * e.gameTime;
             }
 
             if (e.KS.IsKeyDown(Settings.MOVE_UP)) //up
             {
-				transform.translation.Y += 100f * e.gameTime;
+				transform.location.Y += 100f * e.gameTime;
             }
             else if (e.KS.IsKeyDown(Settings.MOVE_DOWN)) //down
             {
-				transform.translation.Y -= 100f * e.gameTime;
+				transform.location.Y -= 100f * e.gameTime;
             }
             if (e.KS.IsKeyDown(Settings.ATTACK))
             {
@@ -65,7 +65,7 @@ namespace Equaliser
 
         public void Draw(DrawArgs e)
         {
-			e.SB.Draw(sprite.GetTexture(), Util.GetCenteredRectangle(Util.WorldToScreen(transform.translation, e.device), new Vector2(32f)), sprite.crop, sprite.color);
+			e.SB.Draw(sprite.GetTexture(), Util.GetCenteredRectangle(Util.WorldToScreen(transform.location, e.device), new Vector2(32f)), sprite.crop, sprite.color);
         }
 
 		public Sprite GetSprite()

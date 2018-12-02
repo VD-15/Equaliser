@@ -27,19 +27,44 @@ namespace Equaliser.Engine
 
 	interface IVisible<T>
 	{
-		void Draw(DrawArgs e);
 		Sprite GetSprite();
+
+		void Draw(DrawArgs e);
 	}
 
 	interface IAnimatable<T>
 	{
-		void Animate(AnimateArgs e);
 		Animator GetAnimator();
+
+		void Animate(AnimateArgs e);
 	}
 
 	static class InterfaceMethods
 	{
-		//IDK
+		public static ICollidable<GameObject> AsICollidable(this GameObject _g)
+		{
+			return _g as ICollidable<GameObject>;
+		}
+
+		public static IUpdatable<GameObject> AsIUpdatable(this GameObject _g)
+		{
+			return _g as IUpdatable<GameObject>;
+		}
+
+		public static IPhysical<GameObject> AsIPhysical(this GameObject _g)
+		{
+			return _g as IPhysical<GameObject>;
+		}
+
+		public static IVisible<GameObject> AsIVisible(this GameObject _g)
+		{
+			return _g as IVisible<GameObject>;
+		}
+
+		public static IAnimatable<GameObject> AsIAnimatable(this GameObject _g)
+		{
+			return _g as IAnimatable<GameObject>;
+		}
 	}
 
 	//GameObjects will inherit certain behavior based on the interfaces defined above.

@@ -51,6 +51,7 @@
     <Compile Include="src\Engine\Collider.cs" />
     <Compile Include="src\Engine\DrawArgs.cs" />
     <Compile Include="src\Engine\GameObject.cs" />
+    <Compile Include="src\Engine\PointCollider.cs" />
     <Compile Include="src\Engine\Sprite.cs" />
     <Compile Include="src\Engine\Transform.cs" />
     <Compile Include="src\Engine\UpdateArgs.cs" />
