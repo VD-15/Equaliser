@@ -23,5 +23,10 @@ namespace Equaliser.Engine
 				((device.Viewport.Height / 2f) - location.Y)
 				);
 		}
+
+		public static float Square(float _f)
+		{
+			return _f * _f;
+		}
 	}
 }

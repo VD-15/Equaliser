@@ -18,7 +18,7 @@ namespace Equaliser.Engine
 	class Collider
 	{
 		//Store a reference to the GameObject to which this collider is attached
-		//This makes it so the 
+		//This makes it so the collider moves and resized with the parent object
 		public IPhysical<GameObject> Parent { get; protected set; }
 		public Transform Transform { get { return this.Parent.GetTransform(); } }
 		public ColliderType Type { get; protected set; }
